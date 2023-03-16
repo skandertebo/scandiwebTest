@@ -10,11 +10,13 @@ export const getProducts = async (): Promise<Product[]> => {
   data.book.forEach((book:any) => {
     book.weigth = parseFloat(book.weigth);
     book.price = parseFloat(book.price);
+    book.id = parseInt(book.id);
     products.push(new Book(book));
   });
   data.dvd.forEach((dvd:any) => {
     dvd.size = parseFloat(dvd.size);
     dvd.price = parseFloat(dvd.price);
+    dvd.id = parseInt(dvd.id);
     products.push(new Dvd(dvd));
   });
   data.furniture.forEach((furniture:any) => {
@@ -22,7 +24,8 @@ export const getProducts = async (): Promise<Product[]> => {
     furniture.width = parseFloat(furniture.width);
     furniture.length = parseFloat(furniture.length);
     furniture.price = parseFloat(furniture.price);
-    products.push(new Furniture({price:furniture.price, sku:furniture.sku, name:furniture.name, height:furniture.height, width:furniture.width, length:furniture.length}));
+    furniture.id = parseInt(furniture.id);
+    products.push(new Furniture({id:furniture.id ,price:furniture.price, sku:furniture.sku, name:furniture.name, height:furniture.height, width:furniture.width, length:furniture.length}));
   });
 
   products.sort((a: Product, b: Product) => {

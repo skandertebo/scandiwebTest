@@ -5,7 +5,9 @@ abstract class Product {
   public sku: string;
   public name: string;
   public price: number;
-  constructor({ sku, name, price }: productProperties) {
+  public id: number;
+  constructor({id, sku, name, price }: productProperties) {
+    this.id = id;
     this.sku = sku;
     this.name = name;
     this.price = price;
@@ -19,14 +21,14 @@ abstract class Product {
 
 }
 
-export interface productProperties { sku: string, name: string, price: number }
+export interface productProperties {id:number, sku: string, name: string, price: number }
 
 export {Product};
 
 class Dvd extends Product {
   public size: string;
-  constructor({ sku, name, price, size }: dvdProperties) {
-    super({ sku, name, price });
+  constructor({id, sku, name, price, size }: dvdProperties) {
+    super({id, sku, name, price });
     this.size = size;
   }
 
@@ -42,8 +44,8 @@ export {Dvd};
 
 class Book extends Product {
   public weight: string;
-  constructor({ sku, name, price, weight }: bookProperties) {
-    super({ sku, name, price });
+  constructor({id, sku, name, price, weight }: bookProperties) {
+    super({id, sku, name, price });
     this.weight = weight;
   }
 
@@ -60,8 +62,8 @@ export {Book};
 class Furniture extends Product {
 
   public dimensions: Dimensions;
-  constructor({ sku, name, price, height, width, length }: furnitureProperties) {
-    super({ sku, name, price });
+  constructor({id, sku, name, price, height, width, length }: furnitureProperties) {
+    super({id, sku, name, price });
     this.dimensions = { height, width, length};
   }
 
