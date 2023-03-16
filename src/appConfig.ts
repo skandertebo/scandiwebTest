@@ -1,1 +1,1 @@
-export const apiRoute = 'http://localhost:80/backendTestScandiweb';
+export const apiRoute = 'https://scandiwebapitest.000webhostapp.com';
