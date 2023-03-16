@@ -2,11 +2,7 @@
 import { Product, Dvd, Furniture, Book} from '../Types/Product';
 import { apiRoute } from '../appConfig';
 export const getProducts = async (): Promise<Product[]> => {
-  const response = await fetch(apiRoute+'/products',{
-    mode: 'no-cors',       // bypass SSL/TLS certificate validation
-    redirect: 'follow',
-    method: 'GET',  
-  });
+  const response = await fetch(apiRoute+'/products');
   const data = await response.json();
   const id = 'sku';
 
