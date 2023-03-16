@@ -1,0 +1,150 @@
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.products-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 0 !important;
+    width: 80%;
+    gap: 2rem;
+    padding:0 !important;
+}
+.product-card{
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding:0.5em 0;
+  text-align: center;
+}
+.page{
+  display: flex;
+  flex-direction: column;
+  padding: 4em;
+  gap: 3em;
+}
+#product_form{
+  display:flex;
+  flex-direction: column;
+}
+.form-group{
+  display:flex;
+  margin: 0.5em 0;
+}
+.form-group label{
+  min-width: 100px;
+}
+.input-error-wrapper{
+  display:flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+.input-error-wrapper .error-text{
+  color: red;
+  font-size: 0.9em;
+}
+.type-switcher{
+  margin:2em 0;
+  gap:2em;
+}
+.special-props{
+  padding:0.8em;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+  width: fit-content;
+}
+.special-props p{
+  margin-top:2em;
+  font-size: 0.9em;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid #222222;
+  align-items: center;
+}
+.action-buttons{
+  display: flex;
+  gap:1em;
+  align-items: center;
+  margin-right:0.8em;
+}
+.action-buttons button{
+  min-width:75px;
+}
+.delete-checkbox-wrapper{
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+.loading-layer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#notification{
+  position: fixed;
+  bottom: 5%;
+  left: 5%;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fade-in 0.5s ease-in-out;
+}
