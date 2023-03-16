@@ -7,6 +7,8 @@ export default async function addProduct(formData: FormData): Promise<any>{
     headers: {
       'accept': 'application/json'
     },
+    mode: 'no-cors',       // bypass SSL/TLS certificate validation
+    redirect: 'follow',
     body: formData
   });
   const data = await response.json();
